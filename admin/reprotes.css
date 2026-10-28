@@ -1,0 +1,254 @@
+/* =========================
+   ESTILO GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body{
+
+    background:#f4f6f9;
+    min-height:100vh;
+
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contenedor{
+
+    width:90%;
+    margin:40px auto;
+
+}
+
+
+h1{
+
+    text-align:center;
+    color:#1f2937;
+    margin-bottom:40px;
+
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+
+}
+
+
+
+/* =========================
+   CARD INDIVIDUAL
+========================= */
+
+.card{
+
+    background:white;
+    padding:30px;
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+
+.card h3{
+
+    color:#555;
+    font-size:20px;
+    margin-bottom:20px;
+
+}
+
+
+
+.card h1{
+
+    color:#2563eb;
+    font-size:45px;
+    margin:0;
+
+}
+
+
+/* =========================
+   COLORES POR ESTADO
+========================= */
+
+
+/* Total Tickets */
+
+.card:nth-child(1) h1{
+
+    color:#2563eb;
+
+}
+
+
+/* Pendientes */
+
+.card:nth-child(2) h1{
+
+    color:#dc2626;
+
+}
+
+
+/* En proceso */
+
+.card:nth-child(3) h1{
+
+    color:#f59e0b;
+
+}
+
+
+/* Finalizados */
+
+.card:nth-child(4) h1{
+
+    color:#16a34a;
+
+}
+
+
+/* Técnicos */
+
+.card:nth-child(5) h1{
+
+    color:#7c3aed;
+
+}
+
+
+/* Clientes */
+
+.card:nth-child(6) h1{
+
+    color:#0891b2;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:600px){
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.contenedor{
+
+    width:95%;
+
+}
+
+
+}
+/* =========================
+   TABLA DE REPORTES
+========================= */
+
+
+.tabla{
+
+    background:white;
+    margin-top:40px;
+    padding:25px;
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.tabla h2{
+
+    text-align:center;
+    margin-bottom:20px;
+    color:#1f2937;
+
+}
+
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+table th{
+
+    background:#2563eb;
+    color:white;
+    padding:12px;
+
+}
+
+
+table td{
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+table tr:hover{
+
+    background:#f1f5f9;
+
+}
+
+
+
+@media(max-width:700px){
+
+table{
+
+    display:block;
+    overflow-x:auto;
+
+}
+
+}

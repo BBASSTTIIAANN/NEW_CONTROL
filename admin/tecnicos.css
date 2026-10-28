@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.contenedor{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Menú */
+
+.menu{
+    width:250px;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h2{
+    color:#00c3ff;
+    margin-bottom:5px;
+}
+
+.logo p{
+    color:#ccc;
+}
+
+.menu ul{
+    list-style:none;
+}
+
+.menu ul li{
+    margin:15px 0;
+}
+
+.menu ul li a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:12px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.menu ul li a:hover,
+.menu ul li a.activo{
+    background:#00c3ff;
+    color:#000;
+}
+
+/* Contenido */
+
+main{
+    flex:1;
+    padding:30px;
+}
+
+header{
+    margin-bottom:25px;
+}
+
+header h1{
+    color:#0f172a;
+}
+
+/* Buscador */
+
+form{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+form input{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+form button{
+    background:#0f172a;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background:#00c3ff;
+    color:black;
+}
+
+/* Tabla */
+
+.tabla{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table thead{
+    background:#0f172a;
+    color:white;
+}
+
+table th,
+table td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+table tbody tr:hover{
+    background:#f0f8ff;
+}
+
+/* Botón Ver */
+
+.ver{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.ver:hover{
+    background:#1d7d34;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .contenedor{
+        flex-direction:column;
+    }
+
+    .menu{
+        width:100%;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    form input{
+        width:100%;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+}

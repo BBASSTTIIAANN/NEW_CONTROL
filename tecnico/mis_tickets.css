@@ -1,0 +1,304 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f4f8;
+    color: #222;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   MENÚ LATERAL
+========================= */
+
+.menu {
+    width: 400px;
+    min-height: 100vh;
+    background: #164da8;
+    color: white;
+    padding-top: 20px;
+}
+
+
+/* LOGO */
+
+.logo {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.logo h2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.logo p {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+
+/* LISTA */
+
+.menu ul {
+    list-style: none;
+    padding: 0 30px;
+}
+
+.menu li {
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 27px;
+
+    padding: 20px 22px;
+
+    border-radius: 15px;
+
+    transition: 0.2s;
+}
+
+
+/* ICONOS */
+
+.menu li i {
+    width: 30px;
+    text-align: center;
+}
+
+
+/* EFECTO */
+
+.menu li a:hover {
+    background: #217bd4;
+}
+
+
+/* ACTIVO */
+
+.menu li.activo a {
+    background: #217bd4;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+main {
+    flex: 1;
+    padding: 40px 45px;
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 46px;
+    color: #202020;
+}
+
+
+/* USUARIO */
+
+.usuario {
+    background: white;
+
+    padding: 18px 35px;
+
+    border-radius: 18px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   TABLA
+========================= */
+
+.tabla {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    overflow-x: auto;
+}
+
+
+.tabla h2 {
+    font-size: 38px;
+
+    margin-bottom: 35px;
+
+    color: #222;
+}
+
+
+/* TABLA */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+}
+
+
+/* CABECERA */
+
+thead {
+    background: #1968c5;
+}
+
+th {
+    color: white;
+
+    font-size: 20px;
+
+    padding: 18px 15px;
+
+    text-align: center;
+}
+
+
+/* CELDAS */
+
+td {
+    padding: 18px 15px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* FILAS */
+
+tbody tr:hover {
+    background: #f4f8fd;
+}
+
+
+/* =========================
+   BOTÓN VER
+========================= */
+
+.ver {
+    background: #1968c5;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+.ver:hover {
+    background: #0d4f9e;
+}
+
+
+/* =========================
+   MENSAJE SIN TICKETS
+========================= */
+
+tbody td[colspan] {
+    padding: 35px;
+
+    color: #666;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        width: 250px;
+    }
+
+    .logo h2 {
+        font-size: 28px;
+    }
+
+    .logo p {
+        font-size: 18px;
+    }
+
+    .menu li a {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    main {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .usuario {
+        font-size: 18px;
+    }
+
+}

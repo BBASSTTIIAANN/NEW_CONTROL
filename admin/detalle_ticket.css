@@ -1,0 +1,227 @@
+/*====================================
+            RESET
+====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*====================================
+            BODY
+====================================*/
+
+body{
+    background:#f4f6f9;
+}
+
+/*====================================
+        CONTENEDOR
+====================================*/
+
+.contenedor{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/*====================================
+            TARJETA
+====================================*/
+
+.card{
+
+    width:750px;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:35px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+/*====================================
+            TITULO
+====================================*/
+
+.card h1{
+
+    text-align:center;
+
+    color:#1565c0;
+
+    margin-bottom:20px;
+
+}
+
+hr{
+
+    margin-bottom:25px;
+
+    border:1px solid #eee;
+
+}
+
+/*====================================
+            GRUPOS
+====================================*/
+
+.grupo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:18px;
+
+}
+
+.grupo label{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+    color:#444;
+
+}
+
+.grupo input{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    background:#f9f9f9;
+
+    font-size:15px;
+
+}
+
+.grupo textarea{
+
+    height:120px;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    resize:none;
+
+    background:#f9f9f9;
+
+    font-size:15px;
+
+}
+
+/*====================================
+            BOTONES
+====================================*/
+
+.botones{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.botones button{
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+/*====================================
+      BOTON ASIGNAR
+====================================*/
+
+.asignar{
+
+    background:#1565c0;
+
+}
+
+.asignar:hover{
+
+    background:#0d47a1;
+
+}
+
+/*====================================
+      BOTON VOLVER
+====================================*/
+
+.volver{
+
+    background:#6c757d;
+
+}
+
+.volver:hover{
+
+    background:#5a6268;
+
+}
+
+/*====================================
+        RESPONSIVE
+====================================*/
+
+@media(max-width:800px){
+
+.card{
+
+width:100%;
+
+padding:20px;
+
+}
+
+.botones{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.botones button{
+
+width:100%;
+
+}
+
+}
