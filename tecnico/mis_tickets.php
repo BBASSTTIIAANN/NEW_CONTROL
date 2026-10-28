@@ -4,16 +4,16 @@ session_start();
 
 include("../sesion/conexion.php");
 
-if(!isset($_SESSION["usuario"])){
+if(!isset($_SESSION["identificacion"])){
     header("Location: ../sesion/index.html");
     exit();
 }
 
-$nombreTecnico = $_SESSION["nombre"];
+$nombreTecnico = $_SESSION["nombres"];
 
 $sql = "SELECT *
         FROM tickets
-        WHERE tecnico = '$nombreTecnico'
+        WHERE id_usuarios = '$nombreTecnico'
         ORDER BY id_tickets DESC";
 
 $resultado = mysqli_query($conexion, $sql);

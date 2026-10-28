@@ -3,7 +3,7 @@ session_start();
 
 include("../sesion/conexion.php");
 
-if(!isset($_SESSION["usuario"])){
+if(!isset($_SESSION["nombres"])){
     header("Location: ../index.php");
     exit();
 }
@@ -20,8 +20,8 @@ if(isset($_GET['buscar'])){
 }else{
 
     $sql = "SELECT * FROM usuarios
-            WHERE rol='tecnico'
-            ORDER BY nombre ASC";
+            WHERE id_perfiles='2'
+            ORDER BY nombres ASC";
 }
 
 $resultado = mysqli_query($conexion,$sql);
@@ -130,15 +130,15 @@ while($fila=mysqli_fetch_assoc($resultado)){
 
 <tr>
 
-<td><?php echo $fila['id']; ?></td>
+<td><?php echo $fila['id_usuarios']; ?></td>
 
-<td><?php echo $fila['nombre']; ?></td>
+<td><?php echo $fila['nombres']; ?></td>
 
-<td><?php echo $fila['usuario']; ?></td>
+<td><?php echo $fila['identificacion']; ?></td>
 
 <td>
 
-<a href="ver_tecnico.php?id=<?php echo $fila['id']; ?>">
+<a href="ver_tecnico.php?id=<?php echo $fila['3']; ?>">
 
 <button class="ver">
 

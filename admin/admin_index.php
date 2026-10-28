@@ -3,7 +3,7 @@ session_start();
 
 include("../sesion/conexion.php");
 $Clientes = mysqli_fetch_assoc(
-    mysqli_query($conexion, "SELECT COUNT(*) AS total FROM clientes")
+   mysqli_query($conexion, "SELECT COUNT(*) AS total FROM usuarios WHERE id_perfiles = 3")
 );
 
 $tickets = mysqli_fetch_assoc(
@@ -11,12 +11,12 @@ $tickets = mysqli_fetch_assoc(
 );
 
 $tecnicos = mysqli_fetch_assoc(
-    mysqli_query($conexion, "SELECT COUNT(*) AS total FROM usuarios WHERE rol='tecnico'")
+    mysqli_query($conexion, "SELECT COUNT(*) AS total FROM usuarios WHERE id_perfiles = 3")
 );
 
 $Pendientes = mysqli_fetch_assoc(
-    mysqli_query($conexion, "SELECT COUNT(*) AS total FROM tickets WHERE estado='Pendiente'")
-);
+    mysqli_query($conexion, "SELECT COUNT(*) AS total FROM usuarios WHERE id_estados = 1")
+)
 ?>
 
 

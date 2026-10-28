@@ -74,13 +74,13 @@ $resultado = mysqli_query($conexion, $sql);
 
                     <td><?php echo $fila['id_tickets']; ?></td>
 
-                    <td><?php echo $fila['cliente']; ?></td>
+                    <td><?php echo $fila['usuarios']; ?></td>
 
-                    <td><?php echo $fila['tipo_falla']; ?></td>
+                    <td><?php echo $fila['id_fallas']; ?></td>
 
-                    <td><?php echo $fila['prioridad']; ?></td>
+                    <td><?php echo $fila['id_prioridades']; ?></td>
 
-                    <td><?php echo $fila['estado']; ?></td>
+                    <td><?php echo $fila['id_estados']; ?></td>
 
                     <td>
 

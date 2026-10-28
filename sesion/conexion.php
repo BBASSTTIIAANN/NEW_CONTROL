@@ -8,13 +8,13 @@ $conexion=mysqli_connect(
 
 "",
 
-"new-control"
+"new_control"
 
 );
 
 if(!$conexion){
 
-die("Error de conexión");
+die("Error de conexion");
 
 }
 

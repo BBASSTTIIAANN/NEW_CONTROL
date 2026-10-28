@@ -14,35 +14,35 @@ PENDIENTES
 =========================*/
 
 $pendientes=mysqli_fetch_assoc(
-mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE estado='Pendiente'"));
+mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE id_estados='4'"));
 
 /*=========================
 EN PROCESO
 =========================*/
 
 $proceso=mysqli_fetch_assoc(
-mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE estado='En proceso'"));
+mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE id_estados='5'"));
 
 /*=========================
 FINALIZADOS
 =========================*/
 
 $finalizados=mysqli_fetch_assoc(
-mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE estado='Finalizado'"));
+mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tickets WHERE id_estados='6'"));
 
 /*=========================
 TECNICOS
 =========================*/
 
 $tecnicos=mysqli_fetch_assoc(
-mysqli_query($conexion,"SELECT COUNT(*) AS total FROM tecnicos WHERE estado='Activo'"));
+mysqli_query($conexion,"SELECT COUNT(*) AS total FROM usuarios WHERE id_estados='1'"));
 
 /*=========================
 CLIENTES
 =========================*/
 
 $clientes=mysqli_fetch_assoc(
-mysqli_query($conexion,"SELECT COUNT(*) AS total FROM clientes"));
+mysqli_query($conexion,"SELECT COUNT(*) AS total FROM usuarios"));
 
 ?>
 
@@ -80,16 +80,20 @@ $ultimostickets = mysqli_query($conexion,
 "
 SELECT 
 tickets.id_tickets,
-clientes.nombre,
-tickets.tipo_falla,
-tickets.telefono,
-tickets.fecha,
-tickets.descripcion,
-tickets.direccion
+tickets.id_usuarios,
+tickets.id_fallas,
+tickets.fecha_registro,
+tickets.observaciones,
+tickets.id_contratos,
+tickets.obs_tecnico,
+tickets.id_prioridades,
+tickets.id_perfiles,
+tickets.fecha_asignacion
+
 FROM tickets
-INNER JOIN clientes 
-ON tickets.id_cliente = clientes.id_cliente
-ORDER BY tickets.fecha DESC
+INNER JOIN usuarios 
+ON tickets.id_usuarios = usuarios.id_usuarios
+ORDER BY tickets.fecha_registro DESC
 LIMIT 10
 ");
 
@@ -152,15 +156,15 @@ LIMIT 10
 </td>
 
 <td>
-<?php echo $fila['tipo_falla']; ?>
+<?php echo $fila['id_fallas']; ?>
 </td>
 
 <td>
-<?php echo $fila['estado']; ?>
+<?php echo $fila['id_estados']; ?>
 </td>
 
 <td>
-<?php echo $fila['fecha_reporte']; ?>
+<?php echo $fila['fecha_registro']; ?>
 </td>
 
 </tr>

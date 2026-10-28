@@ -1,44 +1,65 @@
+
+
 <?php
 session_start();
 
 include("conexion.php");
 
+// Verificar que lleguen los datos del formulario
+if (!isset($_POST["usuario"]) || !isset($_POST["clave"])) {
+    header("Location: login.php?error=1");
+    exit();
+}
+
 $usuario = $_POST["usuario"];
 $clave = $_POST["clave"];
 
+// Buscar el usuario en la base de datos
 $sql = "SELECT * FROM usuarios
-        WHERE usuario='$usuario'
-        AND clave='$clave'";
+        WHERE identificacion = '$usuario'
+        AND clave = '$clave'";
 
 $resultado = mysqli_query($conexion, $sql);
 
-if(mysqli_num_rows($resultado) > 0){
+// Verificar si existe el usuario
+if (mysqli_num_rows($resultado) > 0) {
 
     $fila = mysqli_fetch_assoc($resultado);
 
-    $_SESSION["usuario"] = $fila["usuario"];
-    $_SESSION["nombre"] = $fila["nombre"];
-    $_SESSION["rol"] = $fila["rol"];
+    // Verificar si la cuenta está activa
+    if ($fila["id_estados"] != 1) {
+        header("Location: login.php?error=cuenta");
+        exit();
+    }
 
-    if($fila["rol"] == "administrador"){
+    // Guardar datos en la sesión
+    $_SESSION["identificacion"] = $fila["identificacion"];
+    $_SESSION["nombres"] = $fila["nombres"];
+    $_SESSION["id_perfiles"] = $fila["id_perfiles"];
 
-    header("Location: /NEW%20CONTROL/admin/admin_index.php");
+    // Redirigir según el perfil
+    if ($fila["id_perfiles"] == 1) {
 
-}elseif($fila["rol"] == "tecnico"){
+        header("Location: /NEW%20CONTROL/admin/admin_index.php");
 
-    header("Location: /NEW%20CONTROL/tecnico/tecnico.php");
+    } elseif ($fila["id_perfiles"] == 2) {
 
-}else{
+        header("Location: /NEW%20CONTROL/tecnico/tecnico.php");
 
-    echo "Rol no válido: " . $fila["rol"];
+    } elseif ($fila["id_perfiles"] == 3) {
 
-}
+        header("Location: /NEW%20CONTROL/cliente/cliente.php");
 
-exit();
-}else{
+    } else {
+
+        echo "Perfil no válido.";
+        exit();
+    }
+
+} else {
 
     header("Location: login.php?error=1");
-
+    exit();
 }
 
 exit();

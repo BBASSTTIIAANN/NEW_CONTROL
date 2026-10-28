@@ -6,14 +6,14 @@ include("../sesion/conexion.php");
 
 /* Verificar sesión */
 
-if(!isset($_SESSION["usuario"])){
-    header("Location: ../sesion/index.html");
+if (!isset($_SESSION["identificacion"]) || $_SESSION["id_perfiles"] != 2) {
+    header("Location: ../sesion/login.php");
     exit();
 }
 
 /* Datos del técnico */
 
-$nombreTecnico = $_SESSION["nombre"];
+$nombreTecnico = $_SESSION["nombres"];
 
 
 /* =========================
@@ -23,7 +23,7 @@ $nombreTecnico = $_SESSION["nombre"];
 $sqlAsignados = "
 SELECT COUNT(*) AS total
 FROM tickets
-WHERE tecnico = '$nombreTecnico'
+WHERE id_usuarios = '$nombreTecnico'
 ";
 
 $resultadoAsignados = mysqli_query($conexion, $sqlAsignados);
@@ -38,8 +38,8 @@ $asignados = mysqli_fetch_assoc($resultadoAsignados);
 $sqlProceso = "
 SELECT COUNT(*) AS total
 FROM tickets
-WHERE tecnico = '$nombreTecnico'
-AND estado = 'En Proceso'
+WHERE id_usuarios = '$nombreTecnico'
+AND id_estados = '6'
 ";
 
 $resultadoProceso = mysqli_query($conexion, $sqlProceso);
@@ -54,8 +54,8 @@ $proceso = mysqli_fetch_assoc($resultadoProceso);
 $sqlFinalizados = "
 SELECT COUNT(*) AS total
 FROM tickets
-WHERE tecnico = '$nombreTecnico'
-AND estado = 'Finalizado'
+WHERE id_usuarios = '$nombreTecnico'
+AND id_estados = '6'
 ";
 
 $resultadoFinalizados = mysqli_query($conexion, $sqlFinalizados);
@@ -70,7 +70,7 @@ $finalizados = mysqli_fetch_assoc($resultadoFinalizados);
 $sqlTickets = "
 SELECT *
 FROM tickets
-WHERE tecnico = '$nombreTecnico'
+WHERE id_usuarios = '$nombreTecnico'
 ORDER BY id_tickets DESC
 ";
 
